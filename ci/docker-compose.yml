@@ -1,0 +1,12 @@
+version: '3'
+services:
+  mysql:
+    container_name: "cashflow_db"
+    image: mysql:8
+    ports:
+      - "${DB_PORT}:${DB_PORT}"
+    volumes:
+      - ./app:/app
+    environment:
+      - MYSQL_ROOT_PASSWORD=${DB_PASSWORD}
+      - MYSQL_DATABASE=${DB_NAME}
